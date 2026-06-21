@@ -46,6 +46,22 @@ export default function ContentPage({
           </div>
         )}
 
+        {data.downloads && data.downloads.length > 0 && (
+          <div className="wrap narrow">
+            <div className="dl-list">
+              {data.downloads.map((d, i) => (
+                <a key={i} className="dl-item" href={d.href} download target="_blank" rel="noopener noreferrer">
+                  <span className="dl-ic" aria-hidden="true">↓</span>
+                  <span className="dl-label">
+                    {d.label}
+                    {d.note ? <small> ({d.note})</small> : null}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         {data.gallery && data.gallery.length > 0 && (
           <div className="wrap">
             <div className="img-grid">

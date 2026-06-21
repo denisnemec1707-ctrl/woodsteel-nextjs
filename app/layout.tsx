@@ -27,7 +27,7 @@ const orgSchema = {
   url: PROD,
   telephone: SITE.phone,
   email: SITE.email,
-  image: "https://woodsteel.sk/wp-content/uploads/2023/09/woodsteel-weblogo.png",
+  image: PROD + "/img/woodsteel-weblogo.png",
   areaServed: "SK",
   address: {
     "@type": "PostalAddress",

@@ -12,24 +12,26 @@ export const SITE = {
   location: "Rovinka, okres Senec",
 };
 
-const U = "https://woodsteel.sk/wp-content/uploads";
+// Images are self-hosted under /public/img (downloaded from prod via
+// scripts/fetch-assets.* so the site no longer depends on WordPress).
+const IMG = "/img";
 export const IMAGES = {
-  logo: `${U}/2023/09/woodsteel-weblogo.png`,
-  zimneZahrady: `${U}/2025/07/zimne_zahrady.jpg`,
-  pergoly: `${U}/2025/07/pergoly.jpg`,
-  zasklenie: `${U}/2024/11/zasklenie-teras.jpg`,
-  pristresok: `${U}/2025/09/pristresok-na-auto3.jpg`,
-  pristresok2: `${U}/2025/09/pristresok-na-auto.jpg`,
-  hlinikZZ: `${U}/2024/10/hlinikova-zimna-zahrada.jpg`,
-  hlinikZZ2: `${U}/2025/01/hlinikova-zimna-zahrada2.jpg`,
-  drevoZZ: `${U}/2024/11/drevena-zimna-zahrada5.jpg`,
-  drevoZZ2: `${U}/2024/11/drevena-zimna-zahrada3.jpg`,
-  hlinikPergola: `${U}/2024/11/hlinikova-pergola4.jpg`,
-  hlinikPergola2: `${U}/2024/11/hlinikova-pergola3.jpg`,
-  drevoPergola: `${U}/2024/10/drevena-pergola.jpg`,
-  drevoPergola2: `${U}/2024/11/pergola-drevena3.jpg`,
-  blogZZ: `${U}/2024/11/zimna-zahrada-blog.jpg`,
-  posSystem: `${U}/2024/10/posuvny-ramovy-system.jpg`,
+  logo: `${IMG}/woodsteel-weblogo.png`,
+  zimneZahrady: `${IMG}/zimne_zahrady.jpg`,
+  pergoly: `${IMG}/pergoly.jpg`,
+  zasklenie: `${IMG}/zasklenie-teras.jpg`,
+  pristresok: `${IMG}/pristresok-na-auto3.jpg`,
+  pristresok2: `${IMG}/pristresok-na-auto.jpg`,
+  hlinikZZ: `${IMG}/hlinikova-zimna-zahrada.jpg`,
+  hlinikZZ2: `${IMG}/hlinikova-zimna-zahrada2.jpg`,
+  drevoZZ: `${IMG}/drevena-zimna-zahrada5.jpg`,
+  drevoZZ2: `${IMG}/drevena-zimna-zahrada3.jpg`,
+  hlinikPergola: `${IMG}/hlinikova-pergola4.jpg`,
+  hlinikPergola2: `${IMG}/hlinikova-pergola3.jpg`,
+  drevoPergola: `${IMG}/drevena-pergola.jpg`,
+  drevoPergola2: `${IMG}/pergola-drevena3.jpg`,
+  blogZZ: `${IMG}/zimna-zahrada-blog.jpg`,
+  posSystem: `${IMG}/posuvny-ramovy-system.jpg`,
 };
 
 export const NAV = [
@@ -106,6 +108,7 @@ export type PageContent = {
   intro: string[];
   bullets?: { title: string; text: string }[];
   gallery?: string[];
+  downloads?: { label: string; note?: string; href: string }[];
   cta?: boolean;
 };
 
@@ -366,7 +369,12 @@ export const PAGES: Record<string, PageContent> = {
     lead: "Katalóg a dokumenty na stiahnutie.",
     image: IMAGES.zasklenie,
     intro: [
-      "Pripravujeme pre vás katalóg 2026 s prehľadom produktov, materiálov a inšpirácií. Ozvite sa nám a radi vám ho pošleme na e-mail.",
+      "Stiahnite si náš katalóg s prehľadom produktov a materiálov, prípadne reklamačný formulár pre zákazníkov WoodSteel.sk.",
+    ],
+    downloads: [
+      { label: "Katalóg WoodSteel 2025", note: "PDF", href: "/download/woodsteel-katalog-2025.pdf" },
+      { label: "Reklamačný formulár", note: "PDF", href: "/download/reklamacny-formular.pdf" },
+      { label: "Reklamačný formulár", note: "DOCX", href: "/download/reklamacny-formular.docx" },
     ],
     cta: QUOTE_CTA,
   },
